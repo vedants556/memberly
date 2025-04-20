@@ -121,8 +121,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Shreyas Sharma
 
-- GitHub: [@shreyas](https://github.com/shreyas)
-- LinkedIn: [shreyas-sharma](https://linkedin.com/in/shreyas-sharma)
+- GitHub: [@Vedant](https://github.com/vedants556)
+- LinkedIn: [Vedant Shelar](https://linkedin.com/)
 
 ## 🙏 Acknowledgements
 
