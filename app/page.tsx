@@ -284,7 +284,7 @@ export default function LandingPage() {
                     SJ
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Sarah Johnson</p>
+                    <p className="text-sm font-medium">Ayush Devre</p>
                     <p className="text-xs text-muted-foreground">
                       Fitness Creator
                     </p>
@@ -319,7 +319,7 @@ export default function LandingPage() {
                     MC
                   </div>
                   <div>
-                    <p className="text-sm font-medium">Michael Chen</p>
+                    <p className="text-sm font-medium">Sahil Patil</p>
                     <p className="text-xs text-muted-foreground">
                       Tech Educator
                     </p>

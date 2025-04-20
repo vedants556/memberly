@@ -26,8 +26,8 @@ import {
 
 // Mock user data for demonstration
 const userData = {
-  name: "Sarah Johnson",
-  email: "sarah@example.com",
+  name: "Shreyas Sharma",
+  email: "shreyas@example.com",
   role: "Content Creator",
   joinedDate: "January 2023",
   subscribers: 256,
