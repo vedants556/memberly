@@ -1,36 +1,43 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { AlertCircle } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle } from "lucide-react";
 
 export default function SignupPage() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-  const [error, setError] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
-  const router = useRouter()
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    setError("")
+    e.preventDefault();
+    setError("");
 
     if (password !== confirmPassword) {
-      setError("Passwords do not match")
-      return
+      setError("Passwords do not match");
+      return;
     }
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
       // In a real app, you would use a proper authentication library
@@ -39,45 +46,49 @@ export default function SignupPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
-      })
+      });
 
       if (!response.ok) {
-        const data = await response.json()
-        throw new Error(data.message || "Signup failed")
+        const data = await response.json();
+        throw new Error(data.message || "Signup failed");
       }
 
       // Redirect to profile page on successful signup
-      router.push("/profile")
+      router.push("/profile");
     } catch (err: any) {
-      setError(err.message || "An error occurred during signup")
+      setError(err.message || "An error occurred during signup");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
   }
 
   // For demo purposes, we'll add a function to signup without API call
   function handleDemoSignup() {
-    setIsLoading(true)
+    setIsLoading(true);
     // Simulate API delay
     setTimeout(() => {
-      router.push("/profile")
-    }, 1000)
+      router.push("/profile");
+    }, 1000);
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-white to-purple-50 dark:from-background dark:to-background/90 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-white to-blue-50 dark:from-background dark:to-background/90 p-4">
       <Card className="w-full max-w-md shadow-lg">
         <CardHeader className="space-y-1 text-center">
           <Link href="/" className="mx-auto flex items-center gap-2 mb-2">
-            <div className="bg-gradient-to-r from-purple-600 to-pink-500 rounded-md p-1.5">
+            <div className="bg-gradient-to-r from-blue-600 to-sky-500 rounded-md p-1.5">
               <span className="text-white font-bold text-lg">M</span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
               Memberly
             </span>
           </Link>
-          <CardTitle className="text-2xl font-bold">Create an account</CardTitle>
-          <CardDescription>Enter your information to create your Memberly account</CardDescription>
+          <CardTitle className="text-2xl font-bold">
+            Create an account
+          </CardTitle>
+          <CardDescription>
+            Enter your information to create your Memberly account
+          </CardDescription>
         </CardHeader>
         <CardContent>
           {error && (
@@ -89,7 +100,13 @@ export default function SignupPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="John Doe" value={name} onChange={(e) => setName(e.target.value)} required />
+              <Input
+                id="name"
+                placeholder="John Doe"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
@@ -126,14 +143,20 @@ export default function SignupPage() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600"
+              className="w-full bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600"
               disabled={isLoading}
             >
               {isLoading ? "Creating account..." : "Create Account"}
             </Button>
 
             {/* Demo signup button for demonstration purposes */}
-            <Button type="button" className="w-full" variant="outline" onClick={handleDemoSignup} disabled={isLoading}>
+            <Button
+              type="button"
+              className="w-full"
+              variant="outline"
+              onClick={handleDemoSignup}
+              disabled={isLoading}
+            >
               Demo Signup (No Auth)
             </Button>
           </form>
@@ -141,12 +164,12 @@ export default function SignupPage() {
         <CardFooter className="flex justify-center">
           <p className="text-sm text-muted-foreground">
             Already have an account?{" "}
-            <Link href="/login" className="text-purple-600 hover:underline">
+            <Link href="/login" className="text-blue-600 hover:underline">
               Login
             </Link>
           </p>
         </CardFooter>
       </Card>
     </div>
-  )
+  );
 }
