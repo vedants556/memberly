@@ -20,9 +20,13 @@ export default function LandingPage() {
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
         <div className="container mx-auto max-w-7xl flex h-16 items-center justify-between py-4">
           <div className="flex items-center gap-2">
-            <div className="bg-gradient-to-r from-blue-600 to-sky-500 rounded-md p-1.5">
-              <span className="text-white font-bold text-lg">M</span>
-            </div>
+          <div className="bg-gradient-to-r from-blue-600 to-sky-500 rounded-md p-1.5">
+  <img
+    src="/placeholder-logo.svg" // or use a public URL
+    alt="Logo"
+    className="w-8 h-8 object-contain" // you can adjust size here
+  />
+</div>
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
               Memberly
             </span>
@@ -108,7 +112,7 @@ export default function LandingPage() {
               <div className="relative">
                 <div className="absolute -z-10 inset-0 bg-gradient-to-tr from-blue-100 to-sky-100 rounded-2xl blur-3xl opacity-70 dark:from-blue-900/20 dark:to-sky-900/20"></div>
                 <Image
-                  src="/placeholder.svg?height=550&width=550"
+                  src="/3b1f6b19fd6d711b877fb764a217f8dd.jpg?height=550&width=550"
                   alt="Memberly Platform"
                   width={550}
                   height={550}
