@@ -26,8 +26,8 @@ import {
 
 // Mock user data for demonstration
 const userData = {
-  name: "Shreyas Sharma",
-  email: "shreyas@example.com",
+  name: "Ayush Devre",
+  email: "ayush@example.com",
   role: "Content Creator",
   joinedDate: "January 2023",
   subscribers: 256,
@@ -254,7 +254,7 @@ export default function ProfilePage() {
                         </h4>
                         <div className="text-sm text-muted-foreground">
                           <p>Email: {userData.email}</p>
-                          <p>Website: shreya.sharma@website.com</p>
+                          <p>Website: ayushdevre.com</p>
                         </div>
                       </div>
                     </div>
