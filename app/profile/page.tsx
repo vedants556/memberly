@@ -254,7 +254,7 @@ export default function ProfilePage() {
                         </h4>
                         <div className="text-sm text-muted-foreground">
                           <p>Email: {userData.email}</p>
-                          <p>Website: sarahjohnson.com</p>
+                          <p>Website: shreya.sharma@website.com</p>
                         </div>
                       </div>
                     </div>
