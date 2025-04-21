@@ -676,7 +676,11 @@ export default function LandingPage() {
           <div className="lg:w-1/3">
             <div className="flex items-center gap-2">
               <div className="bg-gradient-to-r from-blue-600 to-sky-500 rounded-md p-1.5">
-                <span className="text-white font-bold text-lg">M</span>
+              <img
+    src="/placeholder-logo.svg" // or use a public URL
+    alt="Logo"
+    className="w-8 h-8 object-contain" // you can adjust size here
+  />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
                 Memberly
